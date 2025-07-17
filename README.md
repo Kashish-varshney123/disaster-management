@@ -1,4 +1,4 @@
-# Disaster Response Platform (CITYMALL Assignment)
+# Disaster Response Platform 
 
 A backend-heavy MERN stack app for disaster management and response, featuring real-time data aggregation, geospatial queries, social media integration, and robust audit trails.
 
