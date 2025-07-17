@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-
-// Fix default marker icon issue in Leaflet + Webpack
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import API_URL from "./config"; // <-- THIS MUST BE HERE, with the others
+
+// Fix default marker icon issue in Leaflet + Webpack
 L.Marker.prototype.options.icon = L.icon({
   iconUrl,
   shadowUrl: iconShadow,
