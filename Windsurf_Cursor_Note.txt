@@ -1,0 +1,16 @@
+# How I Used Windsurf (Cursor)
+
+This project was developed with significant assistance from Windsurf (Cursor), an agentic AI coding assistant. Windsurf/Cursor was used for:
+
+- Generating and refining UI/UX for the React frontend, including modern disaster-themed color schemes, dashboard hero images, and alert components.
+- Integrating the Google Gemini AI API for real image forensics, including backend controller logic and error handling.
+- Improving frontend error handling with user-friendly colored alerts and feedback.
+- Creating and editing backend routes, controllers, and environment configuration for secure API integration.
+- Writing and updating the project README and documentation.
+- Debugging git/submodule issues and providing deployment guidance for Vercel (frontend) and Render (backend).
+
+**Example:**
+- "Windsurf generated the Gemini AI image verification backend logic and the entire error handling flow for both client and server."
+- "Windsurf designed the Resource Map and Dashboard UI, including the gradient overlays and card effects."
+
+Windsurf/Cursor was an essential tool for rapid prototyping, code generation, and best-practice guidance throughout the project.
