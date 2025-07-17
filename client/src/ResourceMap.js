@@ -20,6 +20,7 @@ function SetViewOnClick({ lat, lng }) {
 }
 
 export default function ResourceMap() {
+  console.log("API URL ResourceMap:", process.env.REACT_APP_API_URL);
   //return <div style={{border: "5px solid green", height: 100}}>TEST MAP COMPONENT</div>;
   const [resources, setResources] = useState([]);
   const [externalHospitals, setExternalHospitals] = useState([]);
@@ -49,7 +50,7 @@ export default function ResourceMap() {
   function fetchResources() {
     setLoading(true);
     fetch(
-      `http://localhost:5000/resources/nearby?lat=${lat}&lng=${lng}&radius=${radius}`
+      `${process.env.REACT_APP_API_URL}/resources/nearby?lat=${lat}&lng=${lng}&radius=${radius}`
     )
       .then((res) => res.json())
       .then((data) => setResources(data))
@@ -70,7 +71,7 @@ export default function ResourceMap() {
     }
     setCreating(true);
     setCreateMsg('');
-    fetch('http://localhost:5000/resources', {
+    fetch(`${process.env.REACT_APP_API_URL}/resources`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
