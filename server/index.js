@@ -23,7 +23,28 @@ console.log('SUPABASE_KEY:', process.env.SUPABASE_KEY);
 
 const app = express();
 const server = http.createServer(app);
-const io = new SocketIOServer(server, { cors: { origin: '*' } });
+const io = new SocketIOServer(server, {
+  cors: {
+    origin: [
+      'http://localhost:3000',
+      'https://disaster-management-5nzm.onrender.com',
+      /https:\/\/disaster-management-[^\.]+\.vercel\.app/
+    ],
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
+
+// Socket.io connection handler
+io.on('connection', (socket) => {
+  console.log('A user connected:', socket.id);
+  // Test event
+  socket.emit('message', 'Socket.io connection established!');
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected:', socket.id);
+  });
+});
 
 app.use(cors({
   origin: [/^http:\/\/localhost:\d+$/],

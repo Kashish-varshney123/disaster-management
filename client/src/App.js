@@ -4,10 +4,13 @@ import SocialFeed from "./SocialFeed";
 import ResourceMap from "./ResourceMap";
 import OfficialUpdates from "./OfficialUpdates";
 import ImageVerifier from "./ImageVerifier";
+import API_URL from "./config";
+
 
 function App() {
   const [page, setPage] = useState('dashboard');
-
+  console.log("Connecting socket.io to:", API_URL);
+  //console.log("Connecting socket.io to:", API_URL);
   return (
     <div className="App" style={{ maxWidth: 1000, margin: '0 auto', padding: '2rem 0' }}>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginBottom: 24 }}>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
+import API_URL from "./config";
 
-const socket = io("http://localhost:5000");
+const socket = io(API_URL);
 
 export default function SocialFeed() {
   const [posts, setPosts] = useState([]);
@@ -11,7 +12,7 @@ export default function SocialFeed() {
 
   useEffect(() => {
     // Fetch initial feed
-    fetch("http://localhost:5000/social", { credentials: "include" })
+    fetch(API_URL + "/social", { credentials: "include" })
       .then(res => res.json())
       .then(data => setPosts(data));
 

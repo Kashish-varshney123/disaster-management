@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import API_URL from "./config"; 
 import iconUrl from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import API_URL from "./config"; // <-- THIS MUST BE HERE, with the others
 
 // Fix default marker icon issue in Leaflet + Webpack
 L.Marker.prototype.options.icon = L.icon({
@@ -20,7 +20,6 @@ function SetViewOnClick({ lat, lng }) {
   return null;
 }
 
-import API_URL from "./config";
 export default function ResourceMap() {
   console.log("API URL ResourceMap:", API_URL);
   //return <div style={{border: "5px solid green", height: 100}}>TEST MAP COMPONENT</div>;
@@ -272,3 +271,4 @@ export default function ResourceMap() {
     </div>
   );
 }
+ 

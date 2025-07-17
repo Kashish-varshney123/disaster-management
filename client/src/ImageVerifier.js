@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API_URL from "./config";
 
 export default function ImageVerifier() {
   const [file, setFile] = useState(null);
@@ -21,7 +22,7 @@ export default function ImageVerifier() {
     const formData = new FormData();
     formData.append("image", file);
     try {
-      const res = await fetch("http://localhost:5000/verify-image", {
+      const res = await fetch(API_URL +"/verify-image", {
         method: "POST",
         body: formData,
       });
