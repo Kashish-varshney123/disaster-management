@@ -6,7 +6,7 @@ export default function OfficialUpdates() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/official-updates")
+    fetch(`${process.env.REACT_APP_API_URL}/official-updates`)
       .then((res) => res.json())
       .then((data) => setUpdates(data))
       .catch((err) => setError("Failed to fetch updates"))
