@@ -25,11 +25,8 @@ const app = express();
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
   cors: {
-    origin: [
-      'http://localhost:3000',
-      'https://disaster-management-5nzm.onrender.com',
-      /https:\/\/disaster-management-[^\.]+\.vercel\.app/
-    ],
+    origin: "*"
+  ,
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -46,10 +43,7 @@ io.on('connection', (socket) => {
   });
 });
 
-app.use(cors({
-  origin: [/^http:\/\/localhost:\d+$/],
-  credentials: true
-}));
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
