@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
+import API_URL from "./config";
 
 export default function OfficialUpdates() {
   const [updates, setUpdates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  console.log("API URL:", API_URL);
+
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/official-updates`)
+     fetch(`${API_URL}/official-updates`)
       .then((res) => res.json())
       .then((data) => setUpdates(data))
       .catch((err) => setError("Failed to fetch updates"))
